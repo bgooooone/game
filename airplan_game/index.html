@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人作品集</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="page-overlay" aria-hidden="true"></div>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Portfolio</h2>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#home" class="nav-link" data-i18n="nav.home">首页</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#about" class="nav-link" data-i18n="nav.about">关于</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#projects" class="nav-link" data-i18n="nav.projects">作品</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#skills" class="nav-link" data-i18n="skills.title">技能专长</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#testimonials" class="nav-link" data-i18n="nav.testimonials">评价</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#contact" class="nav-link" data-i18n="nav.contact">联系</a>
+                </li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" class="icon-btn" aria-label="切换主题" title="切换主题">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <select id="langSelect" class="lang-select" aria-label="切换语言" title="切换语言">
+                    <option value="zh" selected>中文</option>
+                    <option value="en">English</option>
+                </select>
+            </div>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页部分 -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero.title">你好，我是 <span class="highlight">开发者</span></h1>
+                <p class="hero-description" data-i18n="hero.desc">
+                    我是一名充满热情的程序员，专注于游戏开发和Web开发。
+                    喜欢创造有趣的项目，将创意转化为现实。
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn btn-primary" data-i18n="hero.viewProjects">查看作品</a>
+                    <a href="#contact" class="btn btn-secondary" data-i18n="hero.contactMe">联系我</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>开发者</h3>
+                    <p>游戏开发者 & Web开发者</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我部分 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title" data-i18n="about.title">关于我</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3 data-i18n="about.story">我的故事</h3>
+                    <p>
+                        <span data-i18n="about.p1">我是一名充满热情的开发者，专注于游戏开发和Web应用开发。 从大学时期开始接触编程，我就被代码的魅力深深吸引。
+                            我喜欢将创意转化为现实，创造有趣且实用的项目。</span>
+                    </p>
+                    <p>
+                        <span data-i18n="about.p2">在编程的道路上，我不断学习新技术，提升自己的技能。 从Python游戏开发到现代Web技术，我始终保持着对技术的热爱和好奇心。
+                            我相信技术可以改变世界，让生活变得更加美好。</span>
+                    </p>
+                    <p>
+                        <span data-i18n="about.p3">除了编程，我还喜欢摄影、音乐和旅行。这些爱好让我在技术之外，也能从不同角度思考问题，为我的项目带来更多创意和灵感。</span>
+                    </p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h4>3+</h4>
+                            <p data-i18n="about.years">年开发经验</p>
+                        </div>
+                        <div class="stat">
+                            <h4>15+</h4>
+                            <p data-i18n="about.projects">完成项目</p>
+                        </div>
+                        <div class="stat">
+                            <h4>8+</h4>
+                            <p data-i18n="about.stacks">技术栈</p>
+                        </div>
+                        <div class="stat">
+                            <h4>100%</h4>
+                            <p data-i18n="about.satisfaction">客户满意度</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-upload-container">
+                        <div class="image-placeholder" id="imagePlaceholder">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="upload-overlay" id="uploadOverlay">
+                            <i class="fas fa-camera"></i>
+                            <p data-i18n="about.upload">点击上传照片</p>
+                        </div>
+                        <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                        <button class="upload-btn" id="uploadBtn" data-i18n="about.changePhoto">更换照片</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 专业经历时间线 -->
+            <div class="timeline">
+                <h3 class="timeline-title" data-i18n="about.timeline.title">专业经历</h3>
+                <div class="timeline-items">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025 - 至今</span>
+                            <h4 data-i18n="about.timeline.r1.title">全栈开发工程师 · 自由职业</h4>
+                            <p data-i18n="about.timeline.r1.desc">负责从前端到后端的端到端交付，涵盖需求澄清、技术选型、实现与上线。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023 - 2024</span>
+                            <h4 data-i18n="about.timeline.r2.title">前端开发工程师 · 互联网公司</h4>
+                            <p data-i18n="about.timeline.r2.desc">负责Web前端架构与性能优化，推动设计系统与组件化落地。</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2022 - 2023</span>
+                            <h4 data-i18n="about.timeline.r3.title">游戏开发实习生 · 独立团队</h4>
+                            <p data-i18n="about.timeline.r3.desc">参与2D游戏原型迭代与玩法验证，完成工具链脚本与关卡编辑。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 个人成就与证书 -->
+            <div class="achievements">
+                <h3 class="achievements-title" data-i18n="about.achievements.title">个人成就与证书</h3>
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-trophy"></i></div>
+                        <h4 data-i18n="about.achievements.a1.title">开源贡献</h4>
+                        <p data-i18n="about.achievements.a1.desc">为多个开源项目提交PR并被合并，涉及工具链与UI组件。</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-certificate"></i></div>
+                        <h4 data-i18n="about.achievements.a2.title">前端工程化证书</h4>
+                        <p data-i18n="about.achievements.a2.desc">系统完成现代前端工程化课程并获得认证。</p>
+                    </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon"><i class="fas fa-medal"></i></div>
+                        <h4 data-i18n="about.achievements.a3.title">编程竞赛优胜</h4>
+                        <p data-i18n="about.achievements.a3.desc">若干校级/市级编程竞赛中取得优胜成绩。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 作品集部分 -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title" data-i18n="projects.title">我的作品</h2>
+            <div class="projects-grid">
+                <!-- 飞机大战游戏 -->
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" onclick="downloadGame()">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="project-link" onclick="showProjectDetails('airplane-game')">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="projects.airplane.title">飞机大战游戏</h3>
+                        <p data-i18n="projects.airplane.desc">使用Python + Pygame开发的2D射击游戏，包含动态背景、护盾系统、等级系统等特色功能。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pygame</span>
+                            <span class="tech-tag">PIL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 个人网站项目 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" onclick="showProjectDetails('portfolio-website')">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="projects.portfolio.title">个人作品集网站</h3>
+                        <p data-i18n="projects.portfolio.desc">响应式个人作品集网站，采用现代设计理念，展示个人项目和技能。支持照片上传、项目展示等功能。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">响应式设计</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 任务管理应用 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" onclick="showProjectDetails('task-manager')">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="projects.task.title">智能任务管理器</h3>
+                        <p data-i18n="projects.task.desc">基于React开发的现代化任务管理应用，支持拖拽排序、标签分类、进度跟踪等功能。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">Express</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 天气应用 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" onclick="showProjectDetails('weather-app')">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-cloud-sun"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="projects.weather.title">天气预报应用</h3>
+                        <p data-i18n="projects.weather.desc">实时天气预报应用，支持多城市查询、7天预报、天气预警等功能。使用OpenWeatherMap API。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Vue.js</span>
+                            <span class="tech-tag">API集成</span>
+                            <span class="tech-tag">PWA</span>
+                            <span class="tech-tag">Service Worker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 在线聊天室 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" onclick="showProjectDetails('chat-room')">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="projects.chat.title">实时聊天室</h3>
+                        <p data-i18n="projects.chat.desc">基于WebSocket的实时聊天应用，支持多房间、私聊、文件传输、表情包等功能。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Socket.io</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">Express</span>
+                            <span class="tech-tag">Redis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 电商网站 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link" onclick="showProjectDetails('ecommerce')">
+                                    <i class="fas fa-eye"></i>
+                                </a>
+                                <a href="#" class="project-link">
+                                    <i class="fas fa-code"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-placeholder">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 data-i18n="projects.ecommerce.title">电商平台</h3>
+                        <p data-i18n="projects.ecommerce.desc">全栈电商网站，包含用户管理、商品展示、购物车、支付集成、订单管理等功能。</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Redux</span>
+                            <span class="tech-tag">PostgreSQL</span>
+                            <span class="tech-tag">Stripe API</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能部分 -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title" data-i18n="skills.title">技能专长</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3 data-i18n="skills.languages">编程语言</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Java</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 data-i18n="skills.frameworks">框架与工具</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Pygame</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">React</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Node.js</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="70%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Git</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-width="80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户评价部分 -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title" data-i18n="testimonials.title">客户评价</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p data-i18n="testimonials.t1">"非常专业的开发者，项目完成度很高，沟通也很顺畅。强烈推荐！"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonials.a1">张经理</h4>
+                            <p data-i18n="testimonials.a1title">某科技公司产品经理</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p data-i18n="testimonials.t2">"技术实力很强，能够快速理解需求并给出最佳解决方案。合作很愉快！"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonials.a2">李总</h4>
+                            <p data-i18n="testimonials.a2title">创业公司CEO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p data-i18n="testimonials.t3">"代码质量很高，文档也很详细。后续维护很方便，值得信赖的合作伙伴。"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="author-info">
+                            <h4 data-i18n="testimonials.a3">王总监</h4>
+                            <p data-i18n="testimonials.a3title">互联网公司技术总监</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我部分 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.title">联系我</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3 data-i18n="contact.subtitle">让我们开始对话</h3>
+                    <p data-i18n="contact.desc">如果您对我的作品感兴趣，或者有合作的想法，欢迎联系我！</p>
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>1937114321@qq.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+86 138-8891-3880</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-i18n="contact.location">中国，广东</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link" id="linkGithub" aria-label="GitHub" title="GitHub"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" id="linkLinkedin" aria-label="LinkedIn" title="LinkedIn"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link" id="linkTwitter" aria-label="Twitter" title="Twitter"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="您的姓名" data-i18n-placeholder="contact.form.name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="您的邮箱" data-i18n-placeholder="contact.form.email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="主题" data-i18n-placeholder="contact.form.subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="您的消息" rows="5" data-i18n-placeholder="contact.form.message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-i18n="contact.form.send">发送消息</button>
+                </form>
+            </div>
+            <!-- 地图定位 -->
+            <div class="map-wrapper">
+                <h3 class="map-title" data-i18n="contact.map.title">我的位置</h3>
+                <div class="map-container">
+                    <iframe title="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://api.map.baidu.com/marker?location=23.1291,113.2644&title=%E6%88%91%E7%9A%84%E4%BD%8D%E7%BD%AE&content=%E5%B9%BF%E4%B8%9C&output=html"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-text">
+                    <p data-i18n="footer.copyright">&copy; 2025 个人作品集. 保留所有权利.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home" data-i18n="nav.home">首页</a>
+                    <a href="#about" data-i18n="nav.about">关于</a>
+                    <a href="#projects" data-i18n="nav.projects">作品</a>
+                    <a href="#testimonials" data-i18n="nav.testimonials">评价</a>
+                    <a href="#contact" data-i18n="nav.contact">联系</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 项目详情模态框 -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- 动态内容将在这里插入 -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
